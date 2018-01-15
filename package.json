@@ -1,14 +1,21 @@
 {
-  "name": "generator-react-boost-start",
-  "version": "0.1.0",
+  "name": "@coderstudio/generator-react-boost-start",
+  "version": "1.0.0",
   "license": "BSD-3-Clause",
   "description": "React generator for the boost-start project.",
-  "repository": "thecoderstudio/generator-react-boost-start",
-  "author": "Code R",
+  "repository": "github:thecoderstudio/generator-react-boost-start",
+  "author": {
+    "name": "Code R",
+    "email": "hello@coderstudio.nl",
+    "url": "https://www.coderstudio.nl"
+  },
   "files": [
-    "base"
+    "generators"
   ],
   "keywords": [
+    "boilerplate",
+    "boost-start",
+    "Code R",
     "yeoman-generator"
   ],
   "scripts": {
