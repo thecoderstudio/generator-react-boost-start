@@ -1,0 +1,19 @@
+{
+  "name": "<%= name %>",
+  "version": "0.1.0",
+  "description": "<%= description %>",
+  "main": "index.jsx",
+  "scripts": {
+    "start:prod": "serve -p 1234 -s dist"
+  },
+  "keywords": [],
+  "author": "<%= author %>",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}

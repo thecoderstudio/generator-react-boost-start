@@ -1,0 +1,16 @@
+version: '3'
+services:
+    <%= projectName %>:
+        container_name: <%= projectName %>
+        image: <%= projectName %>:dev
+        build:
+            context: .
+        ports:
+            - "<%= port %>:1234"
+        volumes:
+            - .:/<%= projectName %>
+            - /<%= projectName %>/node_modules/ # Makes sure local node_modules doesn't get mounted
+        tty: true
+        stdin_open: true
+        command: npm start
+
