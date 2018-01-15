@@ -1,5 +1,5 @@
 {
-  "name": "@coderstudio/generator-react-boost-start",
+  "name": "generator-react-boost-start",
   "version": "1.0.0",
   "license": "BSD-3-Clause",
   "description": "React generator for the boost-start project.",
