@@ -1,4 +1,4 @@
-# Boost-start - React
+# React generator Boost-start
 Out of the box this generator will create a solid React project up to modern day standards. You can choose to include several libraries and technologies we use
 often at Code R. Just like the other generators in the Boost-start project, the generated project is up to the standards we prefer
 at Code R, which may or may not align with yours.
