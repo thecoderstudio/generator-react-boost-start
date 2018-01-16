@@ -67,7 +67,7 @@ module.exports = class extends Generator {
         if (node.type === "VariableDeclaration" && node.source().includes("createStore")) {
           node.update(
           "const store = createStore(\n\
-            reducer,\n\
+            state => state,\n\
             applyMiddleware(epicMiddleware)\n\
            );"
           );
