@@ -10,7 +10,8 @@
     "url": "https://www.coderstudio.nl"
   },
   "files": [
-    "generators"
+    "generators",
+    ".keep"
   ],
   "keywords": [
     "boilerplate",
