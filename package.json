@@ -1,6 +1,6 @@
 {
   "name": "generator-react-boost-start",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "BSD-3-Clause",
   "description": "React generator for the boost-start project.",
   "repository": "github:thecoderstudio/generator-react-boost-start",
