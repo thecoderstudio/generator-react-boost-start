@@ -59,20 +59,18 @@ module.exports = class extends Generator {
         plugins: ["jsx"]
       },
       function(node) {
-        // Add variable declaration above function declaration
         if (node.type === "FunctionDeclaration") {
+        // Add variable declaration above function declaration
           node.prepend("const epicMiddleware = createEpicMiddleware(epic);\n");
-        }
+        } else if (node.type === "VariableDeclaration" && node.source().includes("createStore")) {
         // Replace the current store declaration with one that includes the epic middleware
-        if (node.type === "VariableDeclaration" && node.source().includes("createStore")) {
           node.update(
           "const store = createStore(\n\
             state => state,\n\
             applyMiddleware(epicMiddleware)\n\
            );"
           );
-        }
-        if (node.type === "Program") {
+        } else if (node.type === "Program") {
           self._injectImports(node);
         }
       }
@@ -83,7 +81,7 @@ module.exports = class extends Generator {
     const lastImportOccurence = this._getLastImportOccurence(program.body);
     const reduxImportIndex = program.body.findIndex(i => i.source.extra.rawValue === "redux");
     const reduxImport = program.body[reduxImportIndex];
-    
+
     reduxImport.update("import { createStore, applyMiddleware } from 'redux';\n");
     reduxImport.append("import { createEpicMiddleware } from 'redux-observable';");
     lastImportOccurence.append("\nimport epic from '../epics';\n");

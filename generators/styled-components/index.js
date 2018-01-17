@@ -44,15 +44,11 @@ module.exports = class extends Generator {
             node.prepend("<div>\n<ThemeProvider theme={theme}>\n");
             node.append("\n</ThemeProvider>\n</div>");
           }
-        }
-
+        } else if (node.type === "ClassDeclaration") {
         // Create the theme variable above the class
-        if (node.type === "ClassDeclaration") {
           node.prepend("const theme = {};\n\n");
-        }
-
+        } else if (node.type === "Program") {
         // Add imports to the top of the file
-        if (node.type === "Program") {
           const lastImportOccurence = self._getLastImportOccurence(node.body);
           lastImportOccurence.append("\nimport { ThemeProvider } from 'styled-components';\n");
         }
