@@ -60,6 +60,6 @@ module.exports = class extends Generator {
     const reduxImportIndex = program.body.findIndex(i => i.source.extra.rawValue === "redux");
     const reduxImport = program.body[reduxImportIndex];
     
-    reduxImport.append("\nimport { persistStore, persistCombineReducers } from 'redux-persist'");
+    reduxImport.append("\nimport { persistStore, persistCombineReducers } from 'redux-persist';");
   }
 }
