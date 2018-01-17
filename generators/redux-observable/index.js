@@ -61,7 +61,7 @@ module.exports = class extends Generator {
       function(node) {
         if (node.type === "FunctionDeclaration") {
         // Add variable declaration above function declaration
-          node.prepend("const epicMiddleware = createEpicMiddleware(epic);\n");
+          node.prepend("const epicMiddleware = createEpicMiddleware(epic);\n\n");
         } else if (node.type === "VariableDeclaration" && node.source().includes("createStore")) {
         // Replace the current store declaration with one that includes the epic middleware
           node.update(

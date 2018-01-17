@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable';
 
 
-const epic = combineEpics([]);
+const epics = combineEpics();
 
 export default epics;

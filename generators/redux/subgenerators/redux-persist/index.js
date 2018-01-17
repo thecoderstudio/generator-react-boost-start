@@ -1,4 +1,8 @@
 const Generator = require('yeoman-generator');
+const babylon = require("babylon");
+const esformatter = require("esformatter");
+const transform = require("transform-ast");
+
 
 module.exports = class extends Generator {
   default() {
@@ -56,6 +60,6 @@ module.exports = class extends Generator {
     const reduxImportIndex = program.body.findIndex(i => i.source.extra.rawValue === "redux");
     const reduxImport = program.body[reduxImportIndex];
     
-    reduxImport.append("import { persistStore, persistCombineReducers } from 'redux-persist'");
+    reduxImport.append("\nimport { persistStore, persistCombineReducers } from 'redux-persist'");
   }
 }
