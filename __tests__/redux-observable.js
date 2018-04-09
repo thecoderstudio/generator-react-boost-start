@@ -48,7 +48,7 @@ describe('generator:redux-observable', () => {
       assert.fileContent('src/store/index.jsx', "import epic from '../epics';");
       assert.fileContent('src/store/index.jsx', 'const epicMiddleware = createEpicMiddleware(epic);');
       assert.fileContent('src/store/index.jsx', "const store = createStore(");
-      assert.fileContent('src/store/index.jsx', "reducer,");
+      assert.fileContent('src/store/index.jsx', "state => state,");
       assert.fileContent('src/store/index.jsx', "applyMiddleware(epicMiddleware)");
     });
   });
